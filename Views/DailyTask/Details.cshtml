@@ -1,0 +1,38 @@
+﻿@model DailyTask
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    td, th {
+        padding: 3px;
+        align-content: center;
+        text-align: center;
+    }
+</style>
+<h1>Task Details</h1>
+
+<table border="2">
+    <thead>
+        <tr>
+            <th rowspan="2">Id</th>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">Content</th>
+            <th colspan="2">Category</th>
+        </tr>
+        <tr>
+            <th>Importance</th>
+            <th>Urgency</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Name</td>
+                <td>@Model.Content</td>
+                <td>@Model.Category.ImportanceStatus</td>
+                <td>@Model.Category.UrgencyStatus</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@model List<DailyTask>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table>
+    <thead>
+       <tr>
+           <td>Task Name</td>
+       </tr> 
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td><a asp-action="Details" asp-controller="DailyTask" asp-route-id="@item.Id">@item.Name</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
